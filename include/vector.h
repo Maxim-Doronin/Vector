@@ -15,3 +15,5 @@ public:
 	int operator!=(const vector& f) const;
 	const vector& operator=(const vector& f);
 }
+
+//test
