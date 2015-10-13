@@ -43,20 +43,22 @@ int vector::operator*(const vector &f)
 	return result;
 }
 
-bool vector::operator==(const vector& f) const
+int vector::operator==(const vector& f) const
 {
-	if (size != f.size) return false;
+	int result = 1;
+	if (size != f.size) {result = 0; return result;}
 	for (int i=0; i<size; i++)
-		if (mas[i] != f.mas[i]) return false;
-	return true;
+		if (mas[i] != f.mas[i]) {result = 0; break;}
+	return result;
 }
 
-bool vector::operator!=(const vector& f) const
+int vector::operator!=(const vector& f) const
 {
-	if (size != f.size) return true;
+	int result = 0;
+	if (size != f.size) {result = 1; return result;}
 	for (int i=0; i<size; i++)
-		if (mas[i] != f.mas[i]) return true;
-	return false;
+		if (mas[i] != f.mas[i]) {result = 1; break;}
+	return result;
 }
 
 const vector& vector::operator=(const vector& f)
