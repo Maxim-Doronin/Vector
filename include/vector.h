@@ -1,9 +1,11 @@
 #pragma once
 
+typedef float vElem;
+
 class vector {
 private:
 	int size;
-	float *mas;
+	vElem *mas;
 public:
 	vector(int size);
 	vector(vector& v);
@@ -14,6 +16,4 @@ public:
 	bool operator==(const vector& f) const;
 	bool operator!=(const vector& f) const;
 	const vector& operator=(const vector& f);
-	int get_size() {return size;};
-	float* ger_mas() {return mas;};
-}
+};
